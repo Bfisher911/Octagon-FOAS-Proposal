@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive AI Accelerator | Fisher AI Solutions</title>
+    <meta name="description" content="A bespoke, modular program to transform executive leaders into confident AI integrators, delivered by Dr. Blaine Fisher.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Executive AI Accelerator | Fisher AI Solutions">
+    <meta property="og:description" content="Transforming executive leaders into confident AI integrators.">
+    <meta property="og:image" content="https://placehold.co/1200x630/003E46/F5F7F8?text=Fisher+AI+Solutions">
+    <meta property="og:url" content="#">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://storage.googleapis.com/consulting-logos/LogoFish2_NoBKG.png" type="image/png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- PDF Generation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- Custom Styles & Tailwind Config -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F7F8;
+            color: #0A1F2B;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        /* Glassmorphism Card Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Animated Banner */
+        .delivery-banner {
+            background: linear-gradient(270deg, #003E46, #0A1F2B);
+            background-size: 200% 200%;
+            animation: gradient-animation 10s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Scroll-reveal elements start as invisible */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        /* Custom slider styles */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #003E46;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid #C5A25C;
+        }
+        input[type=range]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: #003E46;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid #C5A25C;
+        }
+        
+        /* Glow effect for logo visibility */
+        .logo-glow {
+            filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 z-50 p-3 bg-[#003E46] text-white rounded-full shadow-lg hover:bg-[#C5A25C] transition-all duration-300 opacity-0 translate-y-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </a>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen min-h-[700px] flex items-center justify-center text-white overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="https://static.videezy.com/system/resources/previews/000/044/227/original/dubai-buildings-and-skyscrapers.mp4" type="video/mp4">
+            </video>
+            <!-- AI Circuitry Overlay -->
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')] opacity-10" style="animation: scroll-bg 20s linear infinite;"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0A1F2B] via-[#0A1F2B]/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 reveal">
+            <img src="https://storage.googleapis.com/consulting-logos/LogoFish2_NoBKG.png" alt="Fisher AI Solutions Logo" class="h-48 mx-auto mb-8 logo-glow">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-poppins mb-4">Executive AI Accelerator</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto font-inter text-gray-300">Modular programs to transform executive leaders into confident AI integrators.</p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button id="download-agenda-btn" class="w-full sm:w-auto bg-[#003E46] border-2 border-[#C5A25C] text-white font-semibold py-3 px-8 rounded-lg hover:bg-[#C5A25C] hover:text-[#003E46] transition-all duration-300 transform hover:scale-105">Download Agenda PDF</button>
+                <a href="https://outlook.office.com/bookwithme/user/82c5edc29d764a0e8d6cbb1662f1ceec%40tulane.edu?anonymous&ismsaljsauthenabled" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-[#003E46] transition-all duration-300 transform hover:scale-105">Book Discovery Call</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Delivery Preference Banner -->
+        <section class="delivery-banner text-white py-6 shadow-xl reveal">
+            <div class="container mx-auto px-4 text-center">
+                <p class="font-bold text-lg mb-1">In-Person Delivery Strongly Preferred</p>
+                <p class="text-sm text-gray-300">Hands-on labs rely on room-wide coaching for maximum impact. <br class="hidden sm:block"> Origin: <strong>New Orleans (MSY) ⇄ Dubai (DXB)</strong>. Travel (airfare, hotel, ground) is invoiced <strong>at cost</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Interactive Agenda Section -->
+        <section id="agenda" class="py-20 md:py-28 bg-[#F5F7F8]">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-4xl md:text-5xl text-[#003E46] mb-4">Interactive Agenda</h2>
+                    <p class="text-lg text-[#0A1F2B]/80 max-w-2xl mx-auto">A modular curriculum designed for immediate application and strategic advantage.</p>
+                </div>
+
+                <div id="agenda-tabs" class="max-w-5xl mx-auto reveal">
+                    <!-- Tab Buttons -->
+                    <div class="flex flex-wrap justify-center border-b border-gray-300 mb-8">
+                        <!-- Tabs will be injected here by JS -->
+                    </div>
+                    <!-- Tab Content -->
+                    <div id="agenda-content">
+                        <!-- Content will be injected here by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Vibe Coding Callout -->
+        <section class="py-16 bg-white reveal">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-gradient-to-r from-[#003E46] to-[#0A1F2B] rounded-xl p-8 md:p-12 text-white shadow-2xl flex flex-col md:flex-row items-center gap-8">
+                    <div class="text-6xl">🔑</div>
+                    <div>
+                        <h3 class="text-3xl font-poppins text-[#C5A25C] mb-2">Don't Skip Day 3's Vibe Coding Lab</h3>
+                        <p class="text-lg text-gray-200">This is the cornerstone of the accelerator. It unlocks powerful, no-code AI automation techniques and an intuitive framework for agentic workflows you won’t find in any other executive program.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment & Calculator Section -->
+        <section id="investment" class="py-20 md:py-28 bg-[#F5F7F8]">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-4xl md:text-5xl text-[#003E46] mb-4">Program Investment</h2>
+                    <p class="text-lg text-[#0A1F2B]/80 max-w-2xl mx-auto">Flexible options to suit your team's specific needs and schedule.</p>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Cafeteria Menu -->
+                    <div class="w-full lg:w-3/5 reveal">
+                        <div class="flex justify-end items-center mb-4 gap-4">
+                            <span class="font-semibold text-sm">Currency:</span>
+                            <label for="currency-toggle" class="flex items-center cursor-pointer">
+                                <span class="mr-2 text-sm font-medium text-gray-900">USD</span>
+                                <div class="relative">
+                                    <input type="checkbox" id="currency-toggle" class="sr-only">
+                                    <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+                                    <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                                </div>
+                                <span class="ml-2 text-sm font-medium text-gray-900">AED</span>
+                            </label>
+                        </div>
+                        <div class="overflow-x-auto bg-white rounded-lg shadow-lg p-1">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="p-4 font-semibold text-sm text-[#003E46]">Program</th>
+                                        <th class="p-4 font-semibold text-sm text-[#003E46]">Mode</th>
+                                        <th class="p-4 font-semibold text-sm text-[#003E46]">Investment*</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Rows will be injected here by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-4">*Travel estimates (economy): MSY⇄DXB ~<span data-price-usd="960">$960</span> RT; business class from ~<span data-price-usd="2400">$2,400</span>. 4-star hotel in Dubai averages <span data-price-usd="66">$66</span>–<span data-price-usd="130">$130</span>/night. Budget <span data-price-usd="400">$400</span>–<span data-price-usd="600">$600</span> total ground & incidentals.</p>
+                    </div>
+                    
+                    <!-- Interactive Cost Calculator -->
+                    <div class="w-full lg:w-2/5 reveal">
+                        <div id="calculator-card" class="bg-white rounded-xl shadow-2xl p-8 sticky top-24">
+                            <h3 class="text-2xl text-[#003E46] mb-6 text-center">Estimate Your Investment</h3>
+                            
+                            <!-- In-Person / Virtual Toggle -->
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Delivery Mode</label>
+                                <div class="flex bg-gray-200 rounded-lg p-1">
+                                    <button id="calc-mode-in-person" class="calc-mode-btn flex-1 py-2 px-4 rounded-md text-sm font-semibold bg-[#003E46] text-white">In-Person</button>
+                                    <button id="calc-mode-virtual" class="calc-mode-btn flex-1 py-2 px-4 rounded-md text-sm font-semibold text-gray-700">Virtual</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Program Length Slider -->
+                            <div class="mb-6">
+                                <label for="calc-length" class="block text-sm font-medium text-gray-700 mb-2">Program Length: <span id="length-label" class="font-bold text-[#003E46]">5 Days</span></label>
+                                <input type="range" id="calc-length" min="1" max="5" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            </div>
+
+                            <!-- Travel Options (Conditional) -->
+                            <div id="travel-options" class="mb-6 space-y-4">
+                                <div>
+                                    <label for="calc-flight" class="block text-sm font-medium text-gray-700 mb-2">Flight Class</label>
+                                    <select id="calc-flight" class="w-full p-2 border border-gray-300 rounded-lg">
+                                        <option value="960">Economy (~$960)</option>
+                                        <option value="1800">Premium Economy (~$1,800)</option>
+                                        <option value="2400">Business (~$2,400)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="calc-hotel" class="block text-sm font-medium text-gray-700 mb-2">Hotel Nights</label>
+                                    <input type="number" id="calc-hotel" value="6" class="w-full p-2 border border-gray-300 rounded-lg">
+                                </div>
+                            </div>
+
+                            <!-- Total -->
+                            <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+                                <p class="text-sm text-gray-600">Estimated Grand Total</p>
+                                <p id="grand-total" class="text-4xl font-bold text-[#003E46] my-2">$24,660</p>
+                                <p id="total-currency" class="text-lg text-[#C5A25C]">USD</p>
+                            </div>
+                            
+                            <button id="email-proposal-btn" class="mt-6 w-full bg-[#003E46] text-white font-semibold py-3 px-8 rounded-lg hover:bg-[#C5A25C] hover:text-[#003E46] transition-all duration-300">Email This Proposal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facilitator Bio Section -->
+        <section id="facilitator" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-12 reveal">
+                    <div class="w-full md:w-1/3 flex-shrink-0 text-center">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQHu_qLKSkfAJA/profile-displayphoto-shrink_200_200/B56ZXP61pzGcAY-/0/1742950066235?e=2147483647&v=beta&t=TiCLY_r0u8wQso5iEaYPBqy6hXfmH10kOPVIMfrZ6RQ" alt="Dr. Blaine Fisher" class="rounded-full aspect-square object-cover shadow-2xl mx-auto w-64 h-64">
+                        <div class="mt-6 flex flex-col items-center md:items-start space-y-3 md:pl-4">
+                            <!-- LinkedIn Button -->
+                            <a href="https://www.linkedin.com/in/blaine-fisher/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-[#003E46] hover:text-[#C5A25C] transition-colors duration-300 font-semibold group">
+                                <svg class="w-6 h-6 text-[#0077b5] group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.62 1.62 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.38.93 3.38 4.32z"></path></svg>
+                                <span>LinkedIn Profile</span>
+                            </a>
+                            <!-- Newsletter Button -->
+                            <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7257851677544710145" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-[#003E46] hover:text-[#C5A25C] transition-colors duration-300 font-semibold group">
+                                <svg class="w-6 h-6 text-gray-500 group-hover:text-[#C5A25C] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span>Hooked on AI Newsletter</span>
+                            </a>
+                            <!-- Tulane Bio Button -->
+                            <a href="https://sopa.tulane.edu/about-sopa/advisors-faculty-staff/blaine-fisher" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-[#003E46] hover:text-[#C5A25C] transition-colors duration-300 font-semibold group">
+                                <svg class="w-6 h-6 text-gray-500 group-hover:text-[#C5A25C] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                <span>Tulane Faculty Bio</span>
+                            </a>
+                            <!-- Tulane Experts Button -->
+                            <a href="https://news.tulane.edu/experts/profile/dr-blaine-fisher" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-[#003E46] hover:text-[#C5A25C] transition-colors duration-300 font-semibold group">
+                                <svg class="w-6 h-6 text-gray-500 group-hover:text-[#C5A25C] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span>Tulane Experts Page</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h2 class="text-4xl text-[#003E46] mb-1 font-poppins">Dr. Blaine Fisher, Ph.D.</h2>
+                        <p class="text-md text-gray-500 mb-2">MS, MA, NRP, PG-Cert</p>
+                        <p class="text-xl text-[#C5A25C] font-semibold mb-4 font-poppins">AI Strategist & Executive Educator</p>
+                        <p class="text-sm text-[#0A1F2B]/80 mb-6 italic">Instructional Technology Strategist | AI Consultant | Emergency Management Expert | Geospatial Scientist | Professor | Maya Archaeologist</p>
+                        
+                        <div class="space-y-4 text-[#0A1F2B]/90 text-base font-inter">
+                            <p>Dr. Blaine Fisher is a distinguished scholar, technologist, and educator whose career embodies the power of interdisciplinary innovation. With a Ph.D. in Geography and Anthropology from Louisiana State University, specializing in Maya Archaeology, Dr. Fisher has built a dynamic career at the crossroads of technology, education, emergency response, and scientific research.</p>
+                            <p>As Tulane University’s Senior Instructional Technology Specialist, Dr. Fisher plays a transformative role in shaping the institution’s educational technology strategy. He serves as the administrator for the Canvas Learning Management System, leads initiatives at the Innovative Learning Center, and facilitates faculty development programs across cutting-edge platforms such as AI tools, Canvas, YuJa, Top Hat, Qualtrics, Box, MS Teams, and Zoom. He has trained over 2,000 faculty members, blending instructional design with AI integration to create engaging, future-ready learning environments.</p>
+                            <p>Dr. Fisher is a global leader in AI education and consulting, conducting AI Bootcamps not only for Tulane’s faculty and staff but also for international executive groups and community audiences, including high-impact workshops in Dubai. He specializes in topics like AI Fundamentals, AI for Research, AI as a Second Brain, Applied AI, AI-Enhanced Course Design, and 9-5 AI for Productivity, offering transformative strategies for individuals and organizations navigating the AI revolution.</p>
+                            
+                            <div class="pt-4 border-t border-gray-200">
+                                <h4 class="font-poppins text-lg text-[#003E46] mb-2">In the classroom, Dr. Fisher teaches:</h4>
+                                <ul class="list-disc list-inside space-y-1 pl-2">
+                                    <li>AI in Modern Society</li>
+                                    <li>Applied Artificial Intelligence</li>
+                                    <li>Health and Medical Issues in Emergency Management</li>
+                                    <li>The Ethics of Technology Through Science Fiction</li>
+                                    <li>The Fundamentals of UI/UX Design</li>
+                                    <li>Enterprise Applications Architecture</li>
+                                    <li>Geospatial Science and GIS Applications</li>
+                                </ul>
+                            </div>
+
+                            <div class="pt-4 border-t border-gray-200">
+                                <h4 class="font-poppins text-lg text-[#003E46] mb-2">Academic Credentials:</h4>
+                                 <ul class="list-disc list-inside space-y-1 pl-2">
+                                    <li>Ph.D. in Geography and Anthropology (LSU)</li>
+                                    <li>M.S. in Healthcare Management (University of New Orleans)</li>
+                                    <li>M.A. in Liberal Arts with focus on Anthropology and Emergency Management (Tulane)</li>
+                                    <li>Post-Graduate Certificate in Geographic Information Systems (Tulane)</li>
+                                    <li>B.G.S. from Southeastern Louisiana University</li>
+                                </ul>
+                            </div>
+
+                            <p>Before academia, Dr. Fisher served for nearly a decade as a paramedic and flight paramedic, bringing real-world emergency response experience to his teaching in disaster science and public health preparedness. He later led Tulane’s Environmental Health & Safety compliance programs, managing training systems and promoting safety culture university-wide.</p>
+                            <p>As a Remote Sensing and Geospatial Scientist with Tulane’s River Science and Coastal Engineering Department, Dr. Fisher supports wetlands restoration and coastal resilience projects through drone operations, LiDAR, GIS, and advanced spatial data analysis. He is also active in archaeological excavations of ancient Maya sites, blending cultural preservation with cutting-edge technology.</p>
+                            <p>Dr. Fisher is the recipient of several honors, including the John Percy Dyer Award for Teaching Excellence, and he is a Faculty Fellow with both the School of Professional Advancement and the Newcomb College Institute.</p>
+                            <p>Whether guiding students through AI ethics in a science fiction course, leading professional development on hybrid learning, or consulting on AI integration for global organizations, Dr. Blaine Fisher exemplifies a rare blend of technical mastery, human-centered pedagogy, and intellectual versatility. He continues to serve as a visionary leader driving innovation in higher education, artificial intelligence, and interdisciplinary research.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-28 bg-gradient-to-br from-[#003E46] to-[#0A1F2B] text-white">
+            <div class="container mx-auto px-4 text-center reveal">
+                <h2 class="text-4xl md:text-5xl mb-4">Ready to Integrate AI?</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10">Let's discuss how the Executive AI Accelerator can be tailored for your team. Reach out to schedule a discovery call.</p>
+                <a href="mailto:bfisher3@tulane.edu" class="bg-[#C5A25C] text-[#003E46] font-bold py-4 px-10 rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105 inline-block">
+                    bfisher3@tulane.edu
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#0A1F2B] text-gray-400 py-8">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; <span id="current-year"></span> Dr. Blaine Fisher. All Rights Reserved.</p>
+            <p class="mt-2">A Proposal by Fisher AI Solutions.</p>
+        </div>
+    </footer>
+
+    <!-- Hidden element for PDF generation -->
+    <div id="pdf-content" class="hidden"></div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // --- DATA ---
+    const agendaData = {
+        days: [
+            {
+                title: "Foundations of Intelligence", date: "Day 1",
+                sessions: [
+                    { time: "09:00", title: "ABCs of AI: Terminology & Concepts", type: "🧠 Lecture" },
+                    { time: "09:30", title: "How Machines 'Think': LLMs & Foundational Models", type: "🧠 Lecture" },
+                    { time: "10:30", title: "Coffee Break", type: "☕️ Break" },
+                    { time: "10:45", title: "Prompt Engineering Fundamentals", type: "🤖 Hands-On" },
+                    { time: "11:45", title: "The Future of AI: Agents & Autonomous Systems", type: "🧠 Lecture" },
+                    { time: "12:30", title: "AI-Augmented Decision Intelligence", type: "🧠 Lecture" },
+                    { time: "13:15", title: "Lunch", type: "🌮 Break" },
+                    { time: "14:15", title: "Hands-On Lab: AI as a Second Brain", type: "🤖 Hands-On" },
+                    { time: "15:15", title: "Hands-On Lab: Custom GPT Workshop", type: "🤖 Hands-On" },
+                    { time: "16:15", title: "Day 1 Wrap-up & Q&A", type: "💬 Discussion" }
+                ]
+            },
+            {
+                title: "Advanced Tooling & Automation", date: "Day 2",
+                sessions: [
+                    { time: "09:00", title: "Intro to Agentic Frameworks", type: "🧠 Lecture" },
+                    { time: "10:00", title: "Workshop: AI Tool Use and MCP", type: "💡 Workshop" },
+                    { time: "11:00", title: "Hands-On Lab: Building Internal Knowledge Bots", type: "🤖 Hands-On" },
+                    { time: "12:00", title: "Lunch", type: "🌮 Break" },
+                    { time: "13:00", title: "Hands-On Lab: AI Automation with Zapier, Make, n8n", type: "🤖 Hands-On" },
+                    { time: "14:00", title: "Hands-On Lab: AI Operators (Manus & GenSpark)", type: "🤖 Hands-On" },
+                    { time: "15:00", title: "Hands-On Lab: AI-Powered Research & Synthesis", type: "🤖 Hands-On" },
+                    { time: "16:00", title: "Talk. Record. Build. — The Future of Actionable Conversations", type: "💡 Workshop" },
+                    { time: "16:45", title: "Day 2 Wrap-up & Q&A", type: "💬 Discussion" }
+                ]
+            },
+            {
+                title: "Agentic Automation", date: "Day 3", highlight: true,
+                sessions: [
+                    { time: "09:00", title: "Deep Dive: What is 'Vibe Coding'?", type: "🧠 Lecture" },
+                    { time: "10:00", title: "Hands-On Lab: Vibe Coding I - Building Your First AI Agent", type: "🤖 Hands-On" },
+                    { time: "12:30", title: "Lunch", type: "🌮 Break" },
+                    { time: "13:30", title: "Hands-On Lab: Vibe Coding II - Multi-Agent Workflows", type: "🤖 Hands-On" },
+                    { time: "15:30", title: "Use Case Clinic: Applying Vibe Coding to Your Business", type: "💡 Workshop" },
+                    { time: "16:30", title: "Day 3 Wrap-up & Q&A", type: "💬 Discussion" }
+                ]
+            },
+            {
+                title: "AI in Practice: Creativity & Media", date: "Day 4",
+                sessions: [
+                    { time: "09:00", title: "Artistry in Seconds: Harnessing AI Image Generators for Marketing and Design", type: "💡 Workshop" },
+                    { time: "10:00", title: "AI-Enhanced Design: Exploring Canva and Other Tools for Business Creativity", type: "💡 Workshop" },
+                    { time: "11:00", title: "From Text to Talk: Hands-On Workshop with ElevenLabs and More", type: "🤖 Hands-On" },
+                    { time: "12:30", title: "Lunch", type: "🌮 Break" },
+                    { time: "13:30", title: "Visual Storytelling with AI: Creating Engaging Videos and Animations", type: "💡 Workshop" },
+                    { time: "14:30", title: "Animating Ideas: Bringing Static Images to Life with AI Video Tools", type: "🤖 Hands-On" },
+                    { time: "15:30", title: "Crafting Your Brand’s Voice: Practical Applications of AI in Corporate Storytelling", type: "🧠 Lecture" },
+                    { time: "16:30", title: "Day 4 Wrap-up & Q&A", type: "💬 Discussion" }
+                ]
+            },
+            {
+                title: "Leadership & Future-Proofing", date: "Day 5",
+                sessions: [
+                    { time: "09:00", title: "Lecture: The 3 Modes of AI Travel: A Framework for Integration", type: "🧠 Lecture" },
+                    { time: "10:00", title: "Your AI, Your Rules: Local Chatbots with OpenWebUI & Ollama", type: "🤖 Hands-On" },
+                    { time: "11:00", title: "Workshop: Developing an AI Roadmap for Your Organization", type: "💡 Workshop" },
+                    { time: "12:00", title: "Capstone Project Presentations", type: "🚀 Capstone" },
+                    { time: "13:00", title: "Lunch", type: "🌮 Break" },
+                    { time: "14:00", title: "Final Q&A and Next Steps", type: "💬 Discussion" },
+                    { time: "15:30", title: "Accelerator Wrap-Up & Certificates", type: "🎉 Ceremony" }
+                ]
+            }
+        ]
+    };
+
+    const investmentData = [
+        { program: "5 Days / 30 hrs", mode: "In-Person", investment: 22500, description: "Full curriculum" },
+        { program: "5 Days / 30 hrs", mode: "Virtual", investment: 19000, description: "Full curriculum (adapted)" },
+        { program: "3 Days / 18 hrs", mode: "In-Person", investment: 14000, description: "Recommended: includes <strong>Vibe Coding</strong>" },
+        { program: "3 Days / 18 hrs", mode: "Virtual", investment: 12500, description: "Recommended: includes <strong>Vibe Coding</strong>" },
+        { program: "2 Days / 12 hrs", mode: "In-Person", investment: 10000, description: "Foundations + Strategic Implementation" },
+        { program: "2 Days / 12 hrs", mode: "Virtual", investment: 9000, description: "Foundations + Strategic Implementation" },
+        { program: "1 Day / 6 hrs", mode: "In-Person", investment: 6000, description: "Core Foundations" },
+        { program: "1 Day / 6 hrs", mode: "Virtual", investment: 5000, description: "Core Foundations" },
+    ];
+    
+    const AED_RATE = 3.67;
+
+    // --- INITIALIZATION ---
+    initAnimations();
+    initAgenda();
+    initInvestmentTable();
+    initCalculator();
+    initBackToTop();
+    initCurrencyToggle();
+    initPdfDownloader();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+
+    // --- FUNCTIONS ---
+
+    function initAnimations() {
+        gsap.registerPlugin(ScrollTrigger);
+        // Hero reveal
+        gsap.from(".hero .reveal", {
+            duration: 1,
+            opacity: 0,
+            y: 50,
+            delay: 0.5,
+            ease: "power3.out"
+        });
+
+        // General section reveal
+        const reveals = gsap.utils.toArray('.reveal');
+        reveals.forEach((el) => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%",
+                    end: "bottom 20%",
+                    onEnter: () => el.style.opacity = '1',
+                    onEnterBack: () => el.style.opacity = '1',
+                    onLeave: () => el.style.opacity = '0',
+                    onLeaveBack: () => el.style.opacity = '0',
+                    toggleClass: 'is-visible', // You can use this class for more complex animations
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        });
+    }
+
+    function initAgenda() {
+        const tabsContainer = document.querySelector('#agenda-tabs .flex');
+        const contentContainer = document.getElementById('agenda-content');
+        
+        // Clear previous agenda
+        tabsContainer.innerHTML = '';
+        contentContainer.innerHTML = '';
+
+        agendaData.days.forEach((day, index) => {
+            // Create Tab Button
+            const button = document.createElement('button');
+            button.className = `agenda-tab text-lg py-3 px-5 -mb-px border-b-2 transition-colors duration-300 ${index === 0 ? 'border-[#003E46] text-[#003E46]' : 'border-transparent text-gray-500 hover:text-[#003E46] hover:border-gray-400'}`;
+            if (day.highlight) {
+                button.innerHTML = `<span class="font-bold text-[#C5A25C]">${day.date} ✨</span>`;
+            } else {
+                button.textContent = day.date;
+            }
+            button.dataset.index = index;
+            tabsContainer.appendChild(button);
+
+            // Create Tab Content
+            const contentDiv = document.createElement('div');
+            contentDiv.className = `agenda-pane ${index === 0 ? '' : 'hidden'}`;
+            let sessionsHtml = `<div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h3 class="text-2xl md:text-3xl font-bold text-[#003E46] mb-6">${day.title}</h3>
+                <div class="space-y-4">`;
+            
+            day.sessions.forEach(session => {
+                sessionsHtml += `
+                    <div class="flex items-start gap-4">
+                        <div class="w-20 text-right text-[#003E46] font-semibold">${session.time}</div>
+                        <div class="flex-shrink-0 w-1.5 h-1.5 mt-2.5 bg-[#C5A25C] rounded-full"></div>
+                        <div class="flex-1">
+                            <p class="font-semibold text-lg">${session.title}</p>
+                            <p class="text-sm text-gray-500">${session.type}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            sessionsHtml += `</div></div>`;
+            contentDiv.innerHTML = sessionsHtml;
+            contentContainer.appendChild(contentDiv);
+        });
+        
+        // Tab click logic
+        tabsContainer.addEventListener('click', (e) => {
+            if (e.target.closest('.agenda-tab')) {
+                const button = e.target.closest('.agenda-tab');
+                const index = button.dataset.index;
+                
+                // Update buttons
+                tabsContainer.querySelectorAll('.agenda-tab').forEach(btn => {
+                    btn.className = btn.className.replace('border-[#003E46] text-[#003E46]', 'border-transparent text-gray-500 hover:text-[#003E46] hover:border-gray-400');
+                });
+                button.className = button.className.replace('border-transparent text-gray-500 hover:text-[#003E46] hover:border-gray-400', 'border-[#003E46] text-[#003E46]');
+
+                // Update content panes
+                contentContainer.querySelectorAll('.agenda-pane').forEach((pane, paneIndex) => {
+                    pane.classList.toggle('hidden', paneIndex != index);
+                });
+            }
+        });
+    }
+
+    function initInvestmentTable() {
+        const tableBody = document.querySelector('#investment table tbody');
+        let html = '';
+        investmentData.forEach(item => {
+            html += `
+                <tr class="border-b border-gray-200 last:border-b-0 hover:bg-gray-50">
+                    <td class="p-4">
+                        <p class="font-semibold text-base">${item.program}</p>
+                        <p class="text-sm text-gray-600">${item.description}</p>
+                    </td>
+                    <td class="p-4 text-sm">${item.mode}</td>
+                    <td class="p-4 font-semibold text-lg text-[#003E46]">
+                        <span data-price-usd="${item.investment}">$${item.investment.toLocaleString()}</span>
+                    </td>
+                </tr>
+            `;
+        });
+        tableBody.innerHTML = html;
+    }
+
+    function initCurrencyToggle() {
+        const toggle = document.getElementById('currency-toggle');
+        const dot = toggle.nextElementSibling.nextElementSibling;
+
+        toggle.addEventListener('change', () => {
+            const isAED = toggle.checked;
+            dot.style.transform = isAED ? 'translateX(100%)' : 'translateX(0)';
+
+            document.querySelectorAll('[data-price-usd]').forEach(el => {
+                const usdPrice = parseFloat(el.dataset.priceUsd);
+                if (isAED) {
+                    const aedPrice = (usdPrice * AED_RATE).toFixed(0);
+                    el.textContent = `AED ${parseInt(aedPrice).toLocaleString()}`;
+                } else {
+                    el.textContent = `$${usdPrice.toLocaleString()}`;
+                }
+            });
+            updateCalculator();
+        });
+    }
+
+    function initCalculator() {
+        const modeInPersonBtn = document.getElementById('calc-mode-in-person');
+        const modeVirtualBtn = document.getElementById('calc-mode-virtual');
+        const lengthSlider = document.getElementById('calc-length');
+        const flightSelect = document.getElementById('calc-flight');
+        const hotelInput = document.getElementById('calc-hotel');
+        const emailBtn = document.getElementById('email-proposal-btn');
+
+        [modeInPersonBtn, modeVirtualBtn, lengthSlider, flightSelect, hotelInput].forEach(el => {
+            el.addEventListener('input', updateCalculator);
+            el.addEventListener('click', updateCalculator);
+        });
+        
+        emailBtn.addEventListener('click', generateEmail);
+
+        updateCalculator(); // Initial calculation
+    }
+
+    function updateCalculator(event) {
+        const modeInPersonBtn = document.getElementById('calc-mode-in-person');
+        const modeVirtualBtn = document.getElementById('calc-mode-virtual');
+        const lengthSlider = document.getElementById('calc-length');
+        const lengthLabel = document.getElementById('length-label');
+        const travelOptions = document.getElementById('travel-options');
+        const hotelInput = document.getElementById('calc-hotel');
+        const flightSelect = document.getElementById('calc-flight');
+        const grandTotalEl = document.getElementById('grand-total');
+        const totalCurrencyEl = document.getElementById('total-currency');
+        
+        // Update button styles only if the event is a click on a mode button
+        if (event && event.target.classList.contains('calc-mode-btn')) {
+            const isTargetVirtual = event.target.id === 'calc-mode-virtual';
+            modeInPersonBtn.classList.toggle('bg-[#003E46]', !isTargetVirtual);
+            modeInPersonBtn.classList.toggle('text-white', !isTargetVirtual);
+            modeVirtualBtn.classList.toggle('bg-[#003E46]', isTargetVirtual);
+            modeVirtualBtn.classList.toggle('text-white', isTargetVirtual);
+        }
+        
+        const mode = document.querySelector('.calc-mode-btn.bg-\\[\\#003E46\\]').textContent;
+        const length = parseInt(lengthSlider.value);
+        
+        lengthLabel.textContent = `${length} Day${length > 1 ? 's' : ''}`;
+        
+        // Auto-update hotel nights only if the slider was changed
+        if (event && event.target.id === 'calc-length') {
+            hotelInput.value = Math.ceil(length * 1.2);
+        }
+
+        travelOptions.style.display = mode === 'In-Person' ? 'block' : 'none';
+
+        // Find base program cost
+        const program = investmentData.find(p => p.program.startsWith(String(length)) && p.mode === mode);
+        let total = program ? program.investment : 0;
+        
+        // Add travel costs
+        if (mode === 'In-Person') {
+            const flightCost = parseInt(flightSelect.value);
+            const hotelNights = parseInt(hotelInput.value);
+            const hotelCostPerNight = 100; // Average
+            const incidentals = 500;
+            total += flightCost + (hotelNights * hotelCostPerNight) + incidentals;
+        }
+
+        const isAED = document.getElementById('currency-toggle').checked;
+        if (isAED) {
+            grandTotalEl.textContent = `AED ${(total * AED_RATE).toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+            totalCurrencyEl.textContent = 'AED';
+        } else {
+            grandTotalEl.textContent = `$${total.toLocaleString('en-US', {maximumFractionDigits: 0})}`;
+            totalCurrencyEl.textContent = 'USD';
+        }
+    }
+    
+    function generateEmail() {
+        const mode = document.querySelector('.calc-mode-btn.bg-\\[\\#003E46\\]').textContent;
+        const length = document.getElementById('calc-length').value;
+        const totalText = document.getElementById('grand-total').textContent;
+        const currency = document.getElementById('total-currency').textContent;
+        
+        let body = `Hello Dr. Fisher,%0D%0A%0D%0AI've reviewed the Executive AI Accelerator proposal and generated an estimate.%0D%0A%0D%0A--- Proposal Details ---%0D%0A`;
+        body += `Delivery Mode: ${mode}%0D%0A`;
+        body += `Program Length: ${length} Day${length > 1 ? 's' : ''}%0D%0A`;
+        
+        if (mode === 'In-Person') {
+            const flightSelect = document.getElementById('calc-flight');
+            const flightText = flightSelect.options[flightSelect.selectedIndex].text;
+            const hotelNights = document.getElementById('calc-hotel').value;
+            body += `Flight Class: ${flightText}%0D%0A`;
+            body += `Hotel Nights: ${hotelNights}%0D%0A`;
+        }
+        
+        body += `--------------------------%0D%0A`;
+        body += `Estimated Total: ${totalText} ${currency}%0D%0A%0D%0A`;
+        body += `We are interested in discussing the next steps.%0D%0A%0D%0A`;
+        body += `Best regards,`;
+        
+        const mailtoLink = `mailto:bfisher3@tulane.edu?subject=AI Accelerator Proposal Estimate&body=${body}`;
+        window.location.href = mailtoLink;
+    }
+
+    function initBackToTop() {
+        const btn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btn.classList.add('opacity-100', 'translate-y-0');
+                btn.classList.remove('opacity-0', 'translate-y-4');
+            } else {
+                btn.classList.remove('opacity-100', 'translate-y-0');
+                btn.classList.add('opacity-0', 'translate-y-4');
+            }
+        });
+    }
+    
+    function initPdfDownloader() {
+        const btn = document.getElementById('download-agenda-btn');
+        const pdfContentEl = document.getElementById('pdf-content');
+
+        btn.addEventListener('click', async () => {
+            const originalBtnText = btn.textContent;
+            btn.textContent = 'Generating...';
+            btn.disabled = true;
+
+            // 1. Create printable content
+            let pdfHtml = `
+                <div style="font-family: 'Inter', sans-serif; color: #0A1F2B; padding: 40px; background-color: white; width: 800px;">
+                    <img src="https://storage.googleapis.com/consulting-logos/LogoFish2_NoBKG.png" style="height: 50px; margin-bottom: 20px;" alt="Fisher AI Solutions Logo" crossorigin="anonymous">
+                    <h1 style="font-family: 'Poppins', sans-serif; font-size: 28px; color: #003E46; margin-bottom: 5px;">Executive AI Accelerator Agenda</h1>
+                    <p style="font-size: 14px; margin-bottom: 30px;">A Proposal by Dr. Blaine Fisher</p>
+            `;
+
+            agendaData.days.forEach(day => {
+                pdfHtml += `
+                    <div style="margin-bottom: 30px; page-break-inside: avoid;">
+                        <h2 style="font-family: 'Poppins', sans-serif; font-size: 20px; color: #003E46; border-bottom: 2px solid #C5A25C; padding-bottom: 5px; margin-bottom: 15px;">${day.date}: ${day.title}</h2>
+                        ${day.sessions.map(session => `
+                            <div style="display: flex; margin-bottom: 10px;">
+                                <div style="width: 80px; font-weight: 600; color: #003E46; flex-shrink: 0;">${session.time}</div>
+                                <div style="flex: 1;">
+                                    <p style="margin: 0; font-weight: 600;">${session.title}</p>
+                                    <p style="margin: 0; font-size: 12px; color: #555;">${session.type}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            });
+            pdfHtml += '</div>';
+            pdfContentEl.innerHTML = pdfHtml;
+            pdfContentEl.classList.remove('hidden');
+
+            // 2. Use html2canvas and jsPDF with corrected pagination logic
+            try {
+                const { jsPDF } = window.jspdf;
+                const canvas = await html2canvas(pdfContentEl, {
+                    scale: 2, // Higher scale for better quality
+                    useCORS: true,
+                    width: 800 // Explicit width
+                });
+                const imgData = canvas.toDataURL('image/png');
+                
+                const imgWidth = canvas.width;
+                const imgHeight = canvas.height;
+                
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'px',
+                    format: 'a4'
+                });
+
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                
+                // Calculate the height of the image in the PDF given the PDF's width
+                const totalPdfHeight = imgHeight * (pdfWidth / imgWidth);
+
+                let position = 0;
+                let heightLeft = totalPdfHeight;
+
+                pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, totalPdfHeight);
+                heightLeft -= pdfHeight;
+
+                while (heightLeft > 0) {
+                    position -= pdfHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, totalPdfHeight);
+                    heightLeft -= pdfHeight;
+                }
+                
+                pdf.save('AI-Accelerator-Agenda-Fisher-AI-Solutions.pdf');
+
+            } catch (error) {
+                console.error("Error generating PDF:", error);
+                btn.textContent = 'Error! Try Again.';
+                setTimeout(() => {
+                    btn.textContent = originalBtnText;
+                }, 3000);
+            } finally {
+                // 3. Clean up
+                pdfContentEl.innerHTML = '';
+                pdfContentEl.classList.add('hidden');
+                btn.textContent = originalBtnText;
+                btn.disabled = false;
+            }
+        });
+    }
+
+});
+</script>
+</body>
+</html>
