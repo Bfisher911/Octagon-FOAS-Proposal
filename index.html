@@ -366,6 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
         days: [
             {
                 title: "Foundations of Intelligence", date: "Day 1",
+                description: "We demystify AI, establishing a firm grasp of the concepts that drive today’s technology. You’ll move from core terminology to understanding how Large Language Models “think,” mastering prompt engineering to get reliable results. This foundational day ensures every leader shares a common, strategic language, providing the critical framework needed to identify opportunities and risks. It’s the essential prerequisite for Day 2, where we’ll turn this knowledge into powerful, hands-on automation tools that you can use immediately.",
                 sessions: [
                     { time: "09:00", title: "ABCs of AI: Terminology & Concepts", type: "🧠 Lecture" },
                     { time: "09:30", title: "How Machines 'Think': LLMs & Foundational Models", type: "🧠 Lecture" },
@@ -381,6 +382,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 title: "Advanced Tooling & Automation", date: "Day 2",
+                description: "Building directly on Day 1’s foundations, we translate theory into action. This session is all about practical application and immediate ROI. You’ll learn to build internal knowledge bots, automate tedious workflows with tools like Zapier, and orchestrate agentic systems for complex tasks. We move beyond simply using AI to actively directing it for measurable productivity gains across your teams. Get ready for Day 3, where we’ll introduce “Vibe Coding,” a revolutionary method for building sophisticated AI solutions without writing a single line of code.",
                 sessions: [
                     { time: "09:00", title: "Intro to Agentic Frameworks", type: "🧠 Lecture" },
                     { time: "10:00", title: "Workshop: AI Tool Use and MCP", type: "💡 Workshop" },
@@ -395,6 +397,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 title: "Agentic Automation", date: "Day 3", highlight: true,
+                description: "Welcome to the heart of the accelerator: Vibe Coding. This signature, hands-on lab empowers you to create powerful, multi-agent AI systems using intuitive, natural language commands. Forget code; here, you’ll learn to direct AI to build websites, design marketing assets, and generate interactive proposals. It’s a paradigm shift that puts true creative and developmental power in the hands of executive leaders. Tomorrow, we’ll harness these new agentic workflow skills to explore the exciting frontier of AI-driven creative media.",
                 sessions: [
                     { time: "09:00", title: "Deep Dive: What is 'Vibe Coding'?", type: "🧠 Lecture" },
                     { time: "10:00", title: "Hands-On Lab: Vibe Coding I - Building Your First AI Agent", type: "🤖 Hands-On" },
@@ -406,6 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 title: "AI in Practice: Creativity & Media", date: "Day 4",
+                description: "Having mastered agentic workflows, we now pivot to creativity. This session explores AI’s transformative impact on media, marketing, and brand storytelling. You’ll go hands-on with tools for generating stunning images, compelling video, and lifelike synthetic voiceovers. This isn’t just about making content; it’s about learning to direct AI as a creative partner to amplify your brand’s message and engage audiences in new ways. This exploration sets the stage for Day 5, where we’ll build a comprehensive strategy for integrating these powerful capabilities securely.",
                 sessions: [
                     { time: "09:00", title: "Artistry in Seconds: Harnessing AI Image Generators for Marketing and Design", type: "💡 Workshop" },
                     { time: "10:00", title: "AI-Enhanced Design: Exploring Canva and Other Tools for Business Creativity", type: "💡 Workshop" },
@@ -419,6 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 title: "Leadership & Future-Proofing", date: "Day 5",
+                description: "We bring it all together with a focus on strategic leadership and long-term implementation. You’ll learn the “3 Modes of AI Travel,” a clear framework for choosing the right AI integration model—from public cloud to a fully private, secure local LLM we’ll build live. The day is dedicated to crafting a bespoke AI roadmap for your organization, culminating in capstone presentations where you will apply the week’s learnings to solve a real-world business challenge, solidifying your transformation into a confident AI integrator.",
                 sessions: [
                     { time: "09:00", title: "Lecture: The 3 Modes of AI Travel: A Framework for Integration", type: "🧠 Lecture" },
                     { time: "10:00", title: "Your AI, Your Rules: Local Chatbots with OpenWebUI & Ollama", type: "🤖 Hands-On" },
@@ -515,8 +520,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const contentDiv = document.createElement('div');
             contentDiv.className = `agenda-pane ${index === 0 ? '' : 'hidden'}`;
             let sessionsHtml = `<div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
-                <h3 class="text-2xl md:text-3xl font-bold text-[#003E46] mb-6">${day.title}</h3>
-                <div class="space-y-4">`;
+                <h3 class="text-2xl md:text-3xl font-bold text-[#003E46] mb-2">${day.title}</h3>
+                <p class="text-base text-[#0A1F2B]/80 mb-8">${day.description}</p>
+                <div class="space-y-4 border-t border-gray-200 pt-6">`;
             
             day.sessions.forEach(session => {
                 sessionsHtml += `
@@ -731,6 +737,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 pdfHtml += `
                     <div style="margin-bottom: 30px; page-break-inside: avoid;">
                         <h2 style="font-family: 'Poppins', sans-serif; font-size: 20px; color: #003E46; border-bottom: 2px solid #C5A25C; padding-bottom: 5px; margin-bottom: 15px;">${day.date}: ${day.title}</h2>
+                        <p style="font-size: 14px; line-height: 1.6; margin-bottom: 15px;">${day.description}</p>
                         ${day.sessions.map(session => `
                             <div style="display: flex; margin-bottom: 10px;">
                                 <div style="width: 80px; font-weight: 600; color: #003E46; flex-shrink: 0;">${session.time}</div>
